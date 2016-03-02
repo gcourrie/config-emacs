@@ -1,0 +1,65 @@
+;******************************************************************************;
+;                                                                              ;
+;                                                         :::      ::::::::    ;
+;    .myemacs                                             :+:      :+:    :+:    ;
+;                                                     +:+ +:+         +:+      ;
+;    By: gcourrie <gcourrie@student.42.fr>          +#+  +:+       +#+         ;
+;                                                 +#+#+#+#+#+   +#+            ;
+;    Created: 2015/12/5 18:20:01 by gcourrie           #+#    #+#              ;
+;    Updated: 2016/01/25 10:14:26 by gcourrie         ###   ########.fr        ;
+;                                                                              ;
+;******************************************************************************;
+;;----------------------------------------------------------------------------;;
+;;                       Set default emacs configuration                      ;;
+;;----------------------------------------------------------------------------;;
+
+;; Universal Character Set Transformation Format - 8 bits
+(set-language-environment "UTF-8")
+
+;; Set color with Font clock mode
+(setq-default font-lock-global-modes t)
+
+;; to see the column number
+(setq-default column-number-mode t)
+
+;; to see the line number
+(setq-default line-number-mode t)
+
+;; tab = 4 spaces
+(setq-default tab-width 4)
+
+;; tab in place of multiple spaces when emacs formats a region
+(setq-default indent-tabs-mode t)
+
+;; binding DEL for delete
+(global-set-key (kbd "DEL") 'backward-delete-char)
+
+;; set backspace delete
+(setq-default c-backspace-function 'backward-delete-char)
+
+;; The basic indentation offset
+(setq-default c-basic-offset 4)
+
+;; Auto Newline
+(setq c-auto-newline nil)
+
+;; linux style
+(setq-default c-default-style "linux")
+
+;; the tabultation stop points
+(setq-default tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60
+                                64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
+
+;; auto pair parenthesis...
+;; (electric-pair-mode 1)
+
+;; show tablulation
+;(setq whitespace-style '(trailing tabs newline tab-mark newline-mark))
+
+;; make characters after column 80 purple
+;(setq whitespace-style
+;      (quote (face trailing tab-mark lines-tail)))
+;(add-hook 'find-file-hook 'whitespace-mode)
+
+;; backup directory in .emacs.d
+(setq backup-directory-alist '(("." . "~/.emacs.d/file-save/")))
